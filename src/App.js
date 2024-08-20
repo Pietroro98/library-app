@@ -9,7 +9,8 @@ import AllTheBooks from "./components/AllTheBooks";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: "url(https://www.dariocapozzi.it/wp-content/uploads/2022/09/background-image-css.jpg)" }}>
+      
       <header>
         <MyNav />
       </header>
@@ -18,7 +19,7 @@ function App() {
         <Welcome />
         <AllTheBooks />
       </main>
-      
+
       <footer>
       <MyFooter />
       </footer>
