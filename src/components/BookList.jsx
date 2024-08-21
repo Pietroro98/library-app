@@ -23,12 +23,13 @@ class BookList extends Component {
 
     return books.filter(
       (book) =>
-        (book.title().includes(search()) && selectedGenre === "all") ||
-        book.category() === selectedGenre
+        (book.title.includes(search) && selectedGenre === "all") ||
+        book.category === selectedGenre
     );
   };
 
   render() {
+    const filteredBooks = this.filterBooks();
     
     return (
       <Container className="my-5">
@@ -53,10 +54,11 @@ class BookList extends Component {
             className="mt-3"
           />
         </Form.Group>
-        <Row>
-          {filteredBooks.map((book) =>) ()}
-          <SingleBook key={book.asyn} theBook={book} />
-        </Row>
+        <Row className="mt-5 g-4">
+        {filteredBooks.map((book) => (
+          <SingleBook key={book.asin} theBook={book} />
+        ))}
+      </Row>
       </Container>
     );
   }
