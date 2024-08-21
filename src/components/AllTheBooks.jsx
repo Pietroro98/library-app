@@ -1,16 +1,20 @@
 import { Row, Col, Card, } from "react-bootstrap";
 import fantasyBooks from "../data/fantasy.json";
 import scifiBooks from "../data/scifi.json";
-import horrorBooks from "../data/scifi.json";
+import horrorBooks from "../data/horror.json";
 import romanceBooks from "../data/romance.json";
 import historyBooks from "../data/history.json";
 
 const AllTheBooks = function () {
-  const allBooks = fantasyBooks
-    .concat(scifiBooks)
-    .concat(horrorBooks)
-    .concat(romanceBooks)
-    .concat(historyBooks);
+  const allBooks = [
+    ...new Set([
+      ...fantasyBooks,
+      ...scifiBooks,
+      ...horrorBooks,
+      ...romanceBooks,
+      ...historyBooks,
+    ]),
+  ];
 
   return (
     <Row className="mt-5 g-4">
@@ -25,7 +29,7 @@ const AllTheBooks = function () {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted fw-bold ">{book.category}</small>
+              <small className="text-muted fw-bold">{book.category}</small>
             </Card.Footer>
           </Card>
         </Col>
