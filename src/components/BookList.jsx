@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Form, Container } from "react-bootstrap";
+import { Row, Form, Col, Container } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 
 class BookList extends Component {
@@ -16,21 +16,21 @@ class BookList extends Component {
     this.setState({ selectedGenre: e.target.value });
   };
 
-  //voglio filtrare i libri basandomi su gener e titolo
   filterBooks = () => {
     const { search, selectedGenre } = this.state;
     const { books } = this.props;
 
     return books.filter(
       (book) =>
-        (book.title.includes(search) && selectedGenre === "all") ||
-        book.category === selectedGenre
+        book.title.toLowerCase().includes(search.toLowerCase()) &&
+        (selectedGenre === "all" ||
+          book.category.toLowerCase() === selectedGenre)
     );
   };
 
   render() {
     const filteredBooks = this.filterBooks();
-    
+
     return (
       <Container className="my-5">
         <Form.Group>
@@ -55,10 +55,10 @@ class BookList extends Component {
           />
         </Form.Group>
         <Row className="mt-5 g-4">
-        {filteredBooks.map((book) => (
-          <SingleBook key={book.asin} theBook={book} />
-        ))}
-      </Row>
+          {filteredBooks.map((book) => (
+            <SingleBook key={book.asin} theBook={book} />
+          ))}
+        </Row>
       </Container>
     );
   }
