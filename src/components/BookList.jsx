@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Row, Form, Col, Container } from "react-bootstrap";
+import { Row, Form, Container } from "react-bootstrap";
 import SingleBook from "./SingleBook";
 
 class BookList extends Component {
   state = {
     search: "",
-    selectedGenre: "all", // Stato per il genere selezionato
+    selectedGenre: "all",
   };
 
   handleSearchChange = (e) => {
