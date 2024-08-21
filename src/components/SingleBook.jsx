@@ -7,7 +7,7 @@ class SingleBook extends Component {
   };
 
   toggleSelected = () => {
-    this.setState({ selected: !this.state.selected });
+    this.setState({ selected: !this.state.selected }); //ogni volta che la card  viene cliccata i nverte lo stato di selected tra true o false. 
   };
 
   render() {
