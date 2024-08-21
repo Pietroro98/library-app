@@ -6,13 +6,13 @@ import MyFooter from "./components/MyFooter";
 import Welcome from "./components/Welcome";
 // import AllTheBooks from "./components/AllTheBooks";
 import fantasyBooks from "../src/data/fantasy.json";
-import SingleBook from "./components/SingleBook";
-//import BookList from "./components/BookList";
+// import SingleBook from "./components/SingleBook";
+import BookList from "./components/BookList";
 
 
 function App() {
   return (
-    <div className="App vh-100" style={{ backgroundImage: "url(https://www.dariocapozzi.it/wp-content/uploads/2022/09/background-image-css.jpg)" }}>
+    <div className="App" style={{ backgroundImage: "url(https://www.dariocapozzi.it/wp-content/uploads/2022/09/background-image-css.jpg)" }}>
       
       <header>
         <MyNav />
@@ -21,7 +21,8 @@ function App() {
       <main>
         <Welcome />
         {/* <AllTheBooks /> */}
-        <SingleBook theBook={fantasyBooks[101]}/>
+        {/* <SingleBook theBook={fantasyBooks[0]}/> */}
+        <BookList books={fantasyBooks} />
         
       </main>
 
