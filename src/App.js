@@ -7,7 +7,7 @@ import Welcome from "./components/Welcome";
 // import AllTheBooks from "./components/AllTheBooks";
 import fantasyBooks from "../src/data/fantasy.json";
 import SingleBook from "./components/SingleBook";
-
+//import BookList from "./components/BookList";
 
 
 function App() {
@@ -21,7 +21,8 @@ function App() {
       <main>
         <Welcome />
         {/* <AllTheBooks /> */}
-        <SingleBook theBook={fantasyBooks[0]}/>
+        <SingleBook theBook={fantasyBooks[101]}/>
+        
       </main>
 
       <footer>
